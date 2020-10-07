@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script type="application/javascript">
+            function copyRedirectUri(){
+                var ta = document.createElement("textarea");
+                ta.id = "neek";
+                ta.value = document.location.href;
+                ta.style.top = document.scrollingElement.scrollHeight;
+                document.body.appendChild(ta);
+                document.getElementById("neek").select(); 
+                document.execCommand("copy");
+                document.body.removeChild(document.getElementById("neek"));
+                document.getElementById("button1").parentElement.removeChild(document.getElementById("button1"));
+                document.body.insertAdjacentHTML('beforeend','<span style="font-size: 180pt; display: block; text-align: center;">&#128077;</span>');
+                setTimeout(function(){
+                    alert("The url has been copied to the clipboard. Now return to the shell that is executing your Python script, paste the contents of the clipboard, and strike Enter.");
+                },500);
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <button id="button1" style="margin-top: 25%; margin-left: 25%; background-color: green; color: white; font-size:30pt;" onclick="copyRedirectUri();">CLICK THIS BUTTON </br>TO COPY THE URL TO </br>THE CLIPBOARD!</button>
+        </div>
+    </body>
+</html>
